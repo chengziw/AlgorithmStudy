@@ -1,4 +1,4 @@
-package com.leecode.study;
+package com.leecode.pratice;
 
 import java.util.*;
 
