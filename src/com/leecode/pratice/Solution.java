@@ -1,36 +1,33 @@
 package com.leecode.pratice;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.leecode.dto.Util;
 
 /**
  * @Author: wangzicheng
- * @Date: 2020/4/9 19:09
+ * @Date: 2020/4/29 11:54
  * @Poject: AlgorithmStudy
  */
 public class Solution {
 
-    ArrayList[] cache = new ArrayList[100];
+    public void shellSort(int[] arr){
+        if(arr.length<1) return;
 
-    public List<String> generateParenthesis(int n) {
-        return generate(n);
+        int N=arr.length;
+        int h=1;
+
+        while(h<N/3) h=3*h+1;
+        while (h>=1){
+            for(int i=h;i<N;i++){
+                for(int j=i;j-h>0&&arr[j]>arr[j-h];j=j-h){
+                    Util.swap(arr,j,j-h);
+                }
+            }
+        }
+        h=h*3;
+
     }
 
-    public List<String> generate(int n) {
-        if (cache[n] != null) {
-            return cache[n];
-        }
-        ArrayList<String> ans = new ArrayList();
-        if (n == 0) {
-            ans.add("");
-        } else {
-            for (int c = 0; c < n; ++c)
-                for (String left : generate(c))
-                    for (String right : generate(n - 1 - c))
-                        ans.add("(" + left + ")" + right);
-        }
-        cache[n] = ans;
-        return ans;
-    }
+    public void testShell(){
 
+    }
 }
