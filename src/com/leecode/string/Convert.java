@@ -1,5 +1,7 @@
 package com.leecode.string;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,5 +31,11 @@ public class Convert {
         for (StringBuilder row : rows) ret.append(row);
         return ret.toString();
 
+    }
+
+    @Test
+    public void testCouvert(){
+        String s =convert("sfsdfaaefcaceffae",4);
+        System.err.println(s);
     }
 }
