@@ -23,7 +23,7 @@ public class QuickSort {
             System.out.println("key："+arr[pivot]+":" + Arrays.toString(arr));
             quickSortArray(arr, left, pivot - 1);
             quickSortArray(arr, pivot + 1, right);
-        }
+}
     }
 
     public int getPivot(int[] arr, int left, int right) {
