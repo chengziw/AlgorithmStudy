@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Author: wangzicheng
@@ -20,26 +23,29 @@ import java.util.List;
  * 解集不能包含重复的组合。 
  */
 class Solution {
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> result=new ArrayList<>();
-        HashMap<Integer,Integer> hashMap=new HashMap();
-        for(int i=0;i<candidates.length;i++){
-            if(hashMap.containsKey(candidates[i])){
-                List<Integer> temp=new ArrayList<>();
-                temp.add(candidates[i]);
-                temp.add(hashMap.get(candidates[i]));
-                hashMap.remove(candidates[i]);
-                result.add(temp);
-            }else {
-                hashMap.put(target-candidates[i],candidates[i]);
+    public void shellSort(int[] ints){
+        int N=ints.length;
+        int h=1;
+
+        while(h<N/3) h=3*h+1;
+
+        while(h>1){
+
+            for(int i=h;i<ints.length;i++){
+
+                for(int j=i;j>0;j=j-i){
+
+                }
             }
+            h=3*h;
         }
-        return result;
     }
 
     @Test
     public void test(){
         int[] ints=new int[]{10,1,2,7,6,1,5};
-        combinationSum2(ints,8).stream().forEach(System.out::println);
+
+        ExecutorService executorsService=Executors.newCachedThreadPool();
+
     }
 }
