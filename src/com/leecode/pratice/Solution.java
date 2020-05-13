@@ -1,15 +1,10 @@
 package com.leecode.pratice;
 
-import com.leecode.dto.Util;
-import org.junit.jupiter.api.Test;
+import com.leecode.dto.ListNode;
+import com.leecode.dto.Node;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * @Author: wangzicheng
@@ -23,29 +18,54 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 解集不能包含重复的组合。 
  */
 class Solution {
-    public void shellSort(int[] ints){
-        int N=ints.length;
-        int h=1;
 
-        while(h<N/3) h=3*h+1;
+    public static void main(String[] args) {
 
-        while(h>1){
+      //第一步：准备数据
+        Node root = new Node("火车头") ;
+        Node n1 = new Node("车厢A") ;
+        Node n2 = new Node("车厢B") ;
 
-            for(int i=h;i<ints.length;i++){
+        // 链接节点
+        root.setNext(n1);
+        n1.setNext(n2);
 
-                for(int j=i;j>0;j=j-i){
-
-                }
-            }
-            h=3*h;
+        //第二步：取出所有数据
+        Node currentNode = root ;  //从当前根节点开始读取
+        while( currentNode !=  null){
+            System.out.println(currentNode.getData()) ;
+            //将下一个节点设置为当前节点s
+            currentNode = currentNode.getNext() ;
         }
+
+        Node dummyHead = new Node("aa");
+        Node tail = dummyHead;
+
+
+        tail.setNext(n1);
+        tail = n1;
     }
 
-    @Test
-    public void test(){
-        int[] ints=new int[]{10,1,2,7,6,1,5};
+    public static ListNode mergeKLists(ListNode[] lists) {
+        Queue<ListNode> pq = new PriorityQueue<>((v1, v2) -> v1.val - v2.val);
+        for (ListNode node : lists) {
+            if (node != null) {
+                pq.offer(node);
+            }
+        }
 
-        ExecutorService executorsService=Executors.newCachedThreadPool();
+        ListNode dummyHead = new ListNode(0);
+        ListNode tail = dummyHead;
+        while (!pq.isEmpty()) {
+            ListNode minNode = pq.poll();
+            tail.next = minNode;
+            tail = minNode;
+            if (minNode.next != null) {
+                pq.offer(minNode.next);
+            }
+        }
 
+        return dummyHead.next;
     }
+
 }
