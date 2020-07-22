@@ -8,7 +8,8 @@ import java.util.Arrays;
  * @Author: wangzicheng
  * @Date: 2020/4/15 13:46
  * @Poject: AlgorithmStudy
- * @description:快速排序 最小时间复杂度：O(nlgn)
+ * @description:快速排序
+ * 最小时间复杂度：O(nlgn)
  * 最大时间复杂度：O(n²)
  * 平均时间复杂度：O(nlgn)         所有代码执行情况累计  /  所有情况数量
  * 额外空间：o(n)
@@ -43,7 +44,7 @@ public class QuickSort {
 
     @Test
     public void testSort() {
-        int[] ints = new int[]{1, 2, 5, 24, 34, 2, 234, 52, 24, 1, 42, 553, 52, 52, 2, 52, 55, 2};
+        int[] ints = new int[]{5,7,1,6,4,8,3,2};
         //quickSortArray(ints,0,ints.length-1);
         System.out.println("原始数据:" + Arrays.toString(ints));
         quickSortArray(ints, 0, ints.length - 1);

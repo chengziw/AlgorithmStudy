@@ -20,7 +20,6 @@ public class BubbleSort {
         Integer[] list = {3, 4, 1, 5, 2};
         sortArrays(list);
         Arrays.asList(list).forEach(System.out::println);
-
     }
 
     public static void sortArrays(Integer[] ints) {

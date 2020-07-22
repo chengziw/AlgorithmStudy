@@ -1,6 +1,5 @@
 package com.leecode.pratice;
 
-import com.alibaba.fastjson.JSONObject;
 import com.leecode.dto.ListNode;
 import org.junit.Test;
 
@@ -25,7 +24,5 @@ public class PraticeDemo {
         listNodes.add(listNode1);
         Map<String,List<ListNode>> map=new HashMap<>();
         map.put("data",listNodes);
-        String json=JSONObject.toJSONString(map);
-        System.out.println(json);
     }
 }
