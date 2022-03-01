@@ -74,6 +74,12 @@ public class Convert {
     }
 
 
+    /**
+     * JDK 动态代理
+     * @param target
+     * @return
+     * @throws Exception
+     */
     private static Object getProxy(final Object target) throws Exception {
         Object proxy = Proxy.newProxyInstance(
                 target.getClass().getClassLoader(),/*类加载器*/
