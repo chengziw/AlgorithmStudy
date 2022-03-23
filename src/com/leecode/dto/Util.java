@@ -39,7 +39,7 @@ public class Util {
      * @return
      */
     public static int[] getTestArr(int maxLength, int maxValue) {
-        maxLength = (int) (Math.random() * maxLength);
+        maxLength = (int) (Math.random() * maxLength)+1;
         int[] arr = new int[maxLength];
         for (int i = 0; i < maxLength; i++) {
             int temp = (int) (Math.random() * maxValue);

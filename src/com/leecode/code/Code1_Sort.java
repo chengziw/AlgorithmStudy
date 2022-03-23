@@ -41,7 +41,7 @@ public class Code1_Sort {
 
     public static void testMany(int times) {
         for (int i = 0; i < times; i++) {
-            int[] arr = Util.getTestArr(10, 1000);
+            int[] arr = Util.getTestArr(100, 1000);
             System.out.print("元数据：");
             printArr(arr);
             selectionSort(arr);
@@ -65,12 +65,11 @@ public class Code1_Sort {
         int N = arr.length;
         for (int i = 0; i < N; i++) {
             int minIndex = i;
-            for (int j = i; j < N; j++) {
-                minIndex = arr[j] < arr[minIndex] ? j : minIndex;
+            for (int j = i ; j < N; j++) {
+                minIndex = arr[j] > arr[minIndex] ? minIndex : j;
             }
-            swap(arr, i, minIndex);
+            swap(arr,i,minIndex);
         }
-
     }
 
     /**
