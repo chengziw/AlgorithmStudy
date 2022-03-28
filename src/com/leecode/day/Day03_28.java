@@ -25,7 +25,7 @@ public class Day03_28 {
             System.out.println(b);
             if (pre == b) {
                 return false;
-            }else {
+            } else {
                 pre = b;
             }
             return true;
@@ -36,4 +36,17 @@ public class Day03_28 {
     public static void main(String[] args) {
         hasAlternatingBits(85);
     }
+
+    public static void newSolution(int n) {
+
+        int count = -1;
+        while (n != 0) {
+            int rightOne = n & ((~n) + 1);
+            count++;
+            n ^= rightOne;
+        }
+        int a = n ^ (n >> 1);
+        int b = a & (a + 1);
+    }
+
 }

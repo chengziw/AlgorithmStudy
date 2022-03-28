@@ -51,4 +51,24 @@ public class Code2_sort {
         }
     }
 
+    public static boolean sortTwo(int[] arr, int n) {
+        if (arr == null || arr.length < 1) {
+            return false;
+        }
+        int l = 0;
+        int N = arr.length;
+        int r = N - 1;
+        while (l < r) {
+            int mid = l + (r - l) >> 2;
+            if (arr[mid] == n) {
+                return true;
+            } else if (arr[mid] < n) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        return arr[l] == n;
+    }
+
 }
