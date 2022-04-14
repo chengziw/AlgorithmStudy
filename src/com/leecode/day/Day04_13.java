@@ -144,7 +144,7 @@ public class Day04_13 {
         // 3. 合并链表head和head2
         ListNode curr = head;
         ListNode curr2 = pre;
-        mergeListNode(curr,curr2);
+        mergeListNode(curr, curr2);
 
     }
 
@@ -161,6 +161,23 @@ public class Day04_13 {
             l2.next = l1;
             l2 = t2;
         }
+    }
+
+    public ListNode deleteMiddle(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode s = head;
+        ListNode q = head;
+        while (q.next != null) {
+            s = s.next;
+            q = q.next.next;
+        }
+        s.next=s.next.next;
+
+        return dummy.next;
     }
 
     @Test
