@@ -113,6 +113,33 @@ public class Day04_14 {
         return rs;
     }
 
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null) {
+            return null;
+        }
+
+        PriorityQueue<ListNode> queue = new PriorityQueue<>();
+        for (int i = 0; i < lists.length; i++) {
+            ListNode node = lists[i];
+            if (node != null) {
+                queue.offer(node);
+            }
+        }
+
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+
+        while (!queue.isEmpty()) {
+            ListNode minNode = queue.poll();
+            tail.next = minNode;
+            tail = minNode;
+            if (tail.next != null){
+                queue.offer(tail.next);
+            }
+        }
+        return dummy.next;
+    }
+
     @Test
     public void test() {
         ListNode listNode1 = new ListNode(1);
