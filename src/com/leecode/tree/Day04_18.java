@@ -75,4 +75,5 @@ public class Day04_18 {
         listNode4.right = listNode5;
         sumOfLeftLeaves(listNode4);
     }
+
 }
