@@ -15,23 +15,24 @@ import java.util.Arrays;
 public class Day_06 {
 
     public int longestPalindrome(String s) {
-        char[] chars = s.toCharArray();
-        Arrays.sort(chars);
-        boolean flag = false;
+        int[] count = new int[128];
+        int length = s.length();
+        for (int i = 0; i < length; ++i) {
+            char c = s.charAt(i);
+            count[c]++;
+        }
         int ans = 0;
-        for (int i = 0; i < chars.length - 1; i++) {
-            if (chars[i] == chars[i + 1] && i + 1 < chars.length) {
-                ans += 2;
-                i++;
-            } else {
-                flag = true;
+        for (int j : count) {
+            ans += j / 2 * 2;
+            if (j % 2 == 1 && ans % 2 == 0) {
+                ans++;
             }
         }
-        return ans + (flag ? 1 : 0);
+        return ans;
     }
 
     @Test
-    public void test(){
+    public void test() {
 
     }
 }
