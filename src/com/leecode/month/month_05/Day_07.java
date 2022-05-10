@@ -8,5 +8,5 @@ package com.leecode.month.month_05;
  * @date: 2022/5/7 16:17
  * @version: 1.0.0
  */
-public class Day05_07 {
+public class Day_07 {
 }
