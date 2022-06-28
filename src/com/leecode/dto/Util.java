@@ -19,6 +19,12 @@ public class Util {
         arr[b] = temp;
     }
 
+    public static void swapChar(char[] arr, int a, int b) {
+        char temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
     /**
      * 交换元素
      *
