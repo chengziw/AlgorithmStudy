@@ -4,6 +4,7 @@ package com.leecode.dto;
 public class Node {
     public static String data; //用于保存数据
     public static Node next;   //用于保存下一个节点
+    public static Integer index;
 
     public Node(String data) {  //每一个Node类对象都必须保存有数据
         this.data = data;
